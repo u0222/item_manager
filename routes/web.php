@@ -1,8 +1,9 @@
 <?php
 
-use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ItemController;
+use App\Http\Controllers\ApiController;
 
 /*
 |--------------------------------------------------------------------------
@@ -49,5 +50,9 @@ Route::middleware('auth')->group(function () {
     Route::get('/detail', [ItemController::class, 'detail']);
 
 });
+
+Route::get('/list', [ApiController::Class, 'list']);
+Route::post('/create', [ApiController::Class, 'create']);
+Route::get('/token', [ApiController::Class, 'token']);
 
 require __DIR__.'/auth.php';
